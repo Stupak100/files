@@ -1,30 +1,34 @@
+//include necessary libraries and std
 #include<iostream>
 using namespace std;
 
-const int N=9;
+//define array and other necessary variables
+const int N = 10;
 int tab[N];
-int  i, a, b;
-bool SortTak=false;
+int  i;
+bool sorted = false;
 
-int main(){
-cout<<"Podaj liczby:\n";
-for(i=0; i<=N; i++){
-	cin>>tab[i];
-}
+//main code
+int main() {
+	//input into array
+	for (int i = 0; i < N; i++) {
+		cin >> tab[i];
+	}
 
-while (SortTak==false){
-    SortTak=true;
-    for(i=0; i<N; i++){
-        if (tab[i] > tab[i+1]){
-            SortTak=false;
-            swap(tab[i], tab[i+1]);
-        }
-    }
-}
+	//sorting algorithm
+	while (sorted == false) {
+		sorted = true;
+		for (i = 0; i < N; i++) {
+			if (tab[i] > tab[i + 1]) {
+				sorted = false;
+				swap(tab[i], tab[i + 1]);
+			}
+		}
+	}
 
-for(i=0; i<=N; i++){
-	cout<<tab[i]<<", ";
-}
-
-return 0;
+	//output from array
+	for (int i = 0; i < N; i++) {
+		cout << tab[i]<<", ";
+	}
+	return 0;
 }
